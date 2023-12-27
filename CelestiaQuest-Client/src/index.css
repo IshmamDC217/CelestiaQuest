@@ -41,7 +41,8 @@ p {
   width: auto;
   height: auto;
   z-index: -100;
-  object-fit: cover; /* This will cover the area and clip the video */
+  object-fit: cover;
+  /* This will cover the area and clip the video */
   background-size: cover;
 }
 
@@ -64,7 +65,7 @@ p {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  padding: 0 50px; 
+  padding: 0 50px;
 }
 
 .main-glass-panel {
@@ -82,6 +83,13 @@ p {
   border-radius: 10px;
   padding: 20px;
   backdrop-filter: blur(10px);
+  width: 100%;
+  transition: all .2s ease-in-out;
+}
+
+.glass-panel:hover {
+  background-color: #ffffff41;
+  transform: scale(1.1);
 }
 
 .image-container {
@@ -89,7 +97,8 @@ p {
 }
 
 .apod-image {
-  width: 100%; /* Adjust if necessary to fit within the container */
+  width: 100%;
+  /* Adjust if necessary to fit within the container */
   height: auto;
   border-radius: 5px;
 }
@@ -103,16 +112,19 @@ p {
 /* Add responsive styles for mobile */
 @media (max-width: 768px) {
   .glass-panel-container {
-    padding: 0 20px; /* Adjust the horizontal padding for smaller screens */
+    padding: 0 20px;
+    /* Adjust the horizontal padding for smaller screens */
   }
-  
+
   .glass-panel {
-    grid-template-columns: 1fr; /* Stack image and info on small screens */
+    grid-template-columns: 1fr;
+    /* Stack image and info on small screens */
     padding: 20px;
   }
 
   .apod-image {
-    width: 100%; /* Ensure the image fits the container on small screens */
+    width: 100%;
+    /* Ensure the image fits the container on small screens */
   }
 }
 
@@ -289,9 +301,7 @@ td.bg-red-600:hover {
 }
 
 /* Medium devices */
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
+@media (min-width: 992px) and (max-width: 1199px) {}
 
 .login {
   background-image: url(/loginbg.png);
@@ -320,6 +330,13 @@ td.bg-red-600:hover {
 }
 
 .logout-button:hover {
-  background-color:#345042cc;
+  background-color: #345042cc;
   border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .logout-button {
+    position: inherit;
+    padding: 20px;
+  }
 }

@@ -142,7 +142,7 @@ function App() {
         <source src="/matrixbg.MP4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className='mb-5'>
+      <div className='mb-5 p-10'>
         <div className='main-glass-panel border border-[#ffffff52]'>
           <h1 className="title text-5xl md:text-7xl sm:text-3xl font-semibold mb-5 text-center">
             CelestiaQuest
