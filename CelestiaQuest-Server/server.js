@@ -166,27 +166,28 @@ app.post('/fetchAPOD', async (req, res) => {
     }
 });
 
-// app.post('/fetchMarsRoverPhotos', async (req, res) => {
-//     try {
-//         const { sol, camera } = req.body;
-//         const data = await nasaApi.fetchMarsRoverPhotos(sol, camera);
-//         res.json(data);
-//     } catch (error) {
-//         console.error("Error occurred:", error);
-//         res.status(500).send("Internal Server Error");
-//     }
-// });
+app.post('/fetchMarsRoverPhotos', async (req, res) => {
+    const { sol = '1000', camera = 'FHAZ' } = req.body; // Set defaults if none provided
+    try {
+        const data = await nasaApi.fetchMarsRoverPhotos(sol, camera);
+        res.json(data.photos); // Ensure you send back the expected data structure
+    } catch (error) {
+        console.error("Error occurred:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
 
-// app.post('/fetchNasaImages', async (req, res) => {
-//     try {
-//         const query = req.body.query;
-//         const data = await nasaApi.fetchNasaImages(query);
-//         res.json(data);
-//     } catch (error) {
-//         console.error("Error occurred:", error);
-//         res.status(500).send("Internal Server Error");
-//     }
-// });
+app.post('/fetchNasaImages', async (req, res) => {
+    const { query = 'stars' } = req.body; // Set a default search query if none provided
+    try {
+        const data = await nasaApi.fetchNasaImages(query);
+        res.json(data.collection); // Adjust according to the actual data structure
+    } catch (error) {
+        console.error("Error occurred:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');

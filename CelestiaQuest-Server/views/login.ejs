@@ -18,9 +18,23 @@
             align-items: center;
         }
 
+        @font-face {
+            font-family: 'GT-Super';
+            src: url('/fonts/GT-Super.otf');
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'GT-Super';
+            color: #87694e;
+        }
+
         .login-container {
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
+            border-radius: 30px;
             display: flex;
             flex-direction: row;
             width: 80vw;
@@ -79,14 +93,14 @@
             margin-top: 1rem;
             border: none;
             border-radius: 4px;
-            background-color: #2850a7;
+            background-color: #87694e;
             color: white;
             cursor: pointer;
             font-size: 1rem;
         }
 
         button[type="submit"]:hover {
-            background-color: #0e1645;
+            background-color: #4b3c30;
         }
 
         @media (max-width: 768px) {
@@ -146,6 +160,7 @@
     <div class="login-container">
         <div class="form-section">
             <div class="login-section">
+                <div class="title">CelestiaQuest</div>
                 <h1>Sign in to Your Account</h1>
                 <form class="login-form" method="POST" action="/login">
                     <label for="username">Username:</label>
