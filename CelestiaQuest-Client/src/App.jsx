@@ -100,7 +100,7 @@ function App() {
       </video>
       <div className='mb-5'>
         <h1 className="title text-5xl md:text-7xl sm:text-3xl font-semibold mb-5 text-center">
-          Astronomy Explorer
+          CelestiaQuest
         </h1>
         <h2 className="title text-3xl md:text-5xl sm:text-2xl font-semibold mb-10 text-center">
           Discover the Cosmos

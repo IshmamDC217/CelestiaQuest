@@ -64,11 +64,12 @@ p {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  padding: 0 50px; /* Added horizontal padding */
 }
 
 .glass-panel {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 40%)); /* Adjust the column widths */
   gap: 10px;
   background: rgba(255, 255, 255, 0.1); /* Adjust for glass effect */
   border-radius: 10px;
@@ -81,7 +82,7 @@ p {
 }
 
 .apod-image {
-  width: 80%;
+  width: 100%; /* Adjust if necessary to fit within the container */
   height: auto;
   border-radius: 5px;
 }
@@ -94,8 +95,17 @@ p {
 
 /* Add responsive styles for mobile */
 @media (max-width: 768px) {
+  .glass-panel-container {
+    padding: 0 20px; /* Adjust the horizontal padding for smaller screens */
+  }
+  
   .glass-panel {
     grid-template-columns: 1fr; /* Stack image and info on small screens */
+    padding: 20px;
+  }
+
+  .apod-image {
+    width: 100%; /* Ensure the image fits the container on small screens */
   }
 }
 
@@ -303,6 +313,6 @@ td.bg-red-600:hover {
 }
 
 .logout-button:hover {
-  background-color:#fffaf5;
+  background-color:#345042cc;
   border-radius: 10px;
 }
